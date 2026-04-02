@@ -1,0 +1,57 @@
+[project]
+name = "linc-openhands"
+version = "0.1.0"
+description = "LINC testing ground for OpenHands agentic SDK"
+authors = [
+    { name = "Faust", email = "faust@lincinnovations.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.88.0",
+    "google-generativeai>=0.8.6",
+    "openhands-sdk>=1.16.1",
+    "openhands-tools>=1.16.1",
+    "structlog>=25.5.0",
+    "typer>=0.24.1",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.20.0",
+    "pytest>=9.0.2",
+    "ruff>=0.15.9",
+]
+
+[tool.ruff]
+line-length = 99
+target-version = "py313"
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "I",    # isort
+    "UP",   # pyupgrade (modernize syntax)
+    "B",    # flake8-bugbear (common bugs)
+    "SIM",  # flake8-simplify
+    "ANN",  # flake8-annotations (enforce type hints)
+    "RUF",  # ruff-specific rules
+]
+ignore = [
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["linc_openhands"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
