@@ -1,6 +1,7 @@
-<!-- AUTO-GENERATED FROM LINC.md — DO NOT EDIT -->
-<!-- LINC_CONTEXT_v1_hash:c4e923845814 -->
-
+---
+linc-agent-version: 1
+type: project
+---
 
 # linc-openhands — OpenHands Agentic SDK Testing Ground
 
